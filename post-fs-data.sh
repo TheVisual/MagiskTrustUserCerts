@@ -3,6 +3,7 @@
 # This will make your scripts compatible even if Magisk change its mount point in the future
 MODDIR=${0%/*}
 
+mount -o bind /system/etc/security/cacerts /apex/com.android.conscrypt/cacerts
 mkdir -p $MODDIR/system/etc/security/cacerts
 rm $MODDIR/system/etc/security/cacerts/*
 cp -f /data/misc/user/0/cacerts-added/* $MODDIR/system/etc/security/cacerts/
